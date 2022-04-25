@@ -270,7 +270,7 @@
   "resolved" "https://registry.npmjs.org/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz"
   "version" "1.0.11"
 
-"cross-spawn@^7.0.2", "cross-spawn@^7.0.3":
+"cross-spawn@^7.0.2":
   "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
   "version" "7.0.3"
@@ -1401,19 +1401,6 @@
   "version" "3.0.2"
   dependencies:
     "glob" "^7.1.3"
-
-"rm-nm@^0.0.2":
-  "integrity" "sha512-d4rBBMeymjKrFH8JSmYSOlIbGH/XOv30f7mio5u9J1LrJ7bZXA5bn98ZK/1iybqNkrLLpnvpxUrmSTMVumFrSA=="
-  "resolved" "https://registry.npmjs.org/rm-nm/-/rm-nm-0.0.2.tgz"
-  "version" "0.0.2"
-
-"rm-nmless@^1.0.4":
-  "integrity" "sha512-UlpFX+iNJ099mn7n7WeWIgDkId+OMT83Ned2VvaTui0nOBWnhnGT+oKbxsP19jfOyRmtQAekW3b+Dzc0Bhj7Gg=="
-  "resolved" "https://registry.npmjs.org/rm-nmless/-/rm-nmless-1.0.4.tgz"
-  "version" "1.0.4"
-  dependencies:
-    "cross-spawn" "^7.0.3"
-    "rm-nm" "^0.0.2"
 
 "semver-diff@^3.1.1":
   "integrity" "sha512-GX0Ix/CJcHyB8c4ykpHGIAvLyOwOobtM/8d+TQkAd81/bEjgPHrfba41Vpesr7jX/t8Uh+R3EX9eAS5be+jQYg=="

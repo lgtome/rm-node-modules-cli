@@ -1,6 +1,6 @@
 {
   "name": "rm-nmless",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "./src/run.js",
   "author": {
     "name": "lgtome",
@@ -40,10 +40,6 @@
   ],
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
-  },
-  "dependencies": {
-    "cross-spawn": "^7.0.3",
-    "rm-nmless": "^1.0.4"
   },
   "repository": {
     "type": "git",
