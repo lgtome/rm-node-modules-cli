@@ -16,8 +16,8 @@ export function exec(args) {
   }
 
   run(resolvedPath, days, resolvedType)
-    .then(() => printToConsole(getMessageByType(resolvedType), { stop: true }))
+    .then(() => printToConsole(getMessageByType(resolvedType), true))
     .catch((error) =>
-      printToConsole(`Something went wrong 😌 -> ${error}`, { stop: true }),
+      printToConsole(`Something went wrong 😌 -> ${error}`, true),
     )
 }

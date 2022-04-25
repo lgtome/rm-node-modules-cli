@@ -13,7 +13,6 @@ const { promises } = fs
 export async function run(entryPath, day = 14, type = 'check') {
   if (!entryPath || !typeof day === 'number' || !type)
     return Error('Arguments not provided!')
-
   const projects = await promises.readdir(entryPath)
   const isProjectDir = projects.filter((proj) => checkIsProject(proj)).length
   projects.forEach((proj) => {
@@ -21,6 +20,7 @@ export async function run(entryPath, day = 14, type = 'check') {
     const isDir = fs.lstatSync(currentPath).isDirectory()
     if (isDir && !isProjectDir && !currentPath.includes('.')) {
       run(currentPath, day, type)
+    } else {
     }
   })
 
@@ -34,11 +34,7 @@ export async function run(entryPath, day = 14, type = 'check') {
       isModulesFounded,
       entryPath,
     )
-
-    printToConsole(`Folder to delete 🍢 - ${pathToModules}`, {
-      condition: pathToModules,
-    })
-
+    printToConsole(`Folder to delete 🍢 - ${pathToModules}`, isModulesFounded)
     if (type !== 'check' && pathToModules) {
       const resultToPrint = deleteModules(pathToModules)
       printToConsole(resultToPrint)
