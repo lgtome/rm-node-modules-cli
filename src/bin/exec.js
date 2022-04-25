@@ -1,27 +1,13 @@
 #!/usr/bin/env node
 
-import spawn from 'cross-spawn'
-
+import { exec } from '../run.js'
 function run() {
   const argvS = process.argv.slice(2)
   const args = getArgs(argvS)
-  doSpawn(args)
+  exec(args)
 }
 
 run()
-
-function doSpawn(args) {
-  spawn.sync(
-    'npm',
-    ['run', 'execute'],
-    {
-      encoding: 'utf8',
-      stdio: 'inherit',
-      env: { ...process.env, ...args },
-    },
-    { test: 1 },
-  )
-}
 
 function getArgs(arr) {
   return arr.reduce((acc, arg) => {

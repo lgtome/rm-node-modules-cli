@@ -35,7 +35,9 @@ export async function run(entryPath, day = 14, type = 'check') {
       entryPath,
     )
 
-    printToConsole(`Folder to delete 🍢 - ${pathToModules}`, pathToModules)
+    printToConsole(`Folder to delete 🍢 - ${pathToModules}`, {
+      condition: pathToModules,
+    })
 
     if (type !== 'check' && pathToModules) {
       const resultToPrint = deleteModules(pathToModules)
