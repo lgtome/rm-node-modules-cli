@@ -51,7 +51,7 @@ _**path**_ - path to folder with projects. See [Structure](#structure) for more 
 --path=$VALUE$
 ```
 
-_**days**_ - how many days passed after the last editing. Any number value, if that will be zero it equal to _all the time_
+_**days**_ - how many days passed after the last editing. Any number value, if that will be zero it equal to _all the time_. (Default 14 days)
 
 ```sh
 --days=$VALUE$
