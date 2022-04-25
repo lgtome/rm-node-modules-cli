@@ -5,7 +5,6 @@ import spawn from 'cross-spawn'
 function run() {
   const argvS = process.argv.slice(2)
   const args = getArgs(argvS)
-  console.log(args)
   doSpawn(args)
 }
 
@@ -26,12 +25,7 @@ function doSpawn(args) {
 
 function getArgs(arr) {
   return arr.reduce((acc, arg) => {
-    // if (arg.includes('--')) {
-
-    // }
-    // acc[arg] = arg
     return { ...acc, ...constructFromArgs(arg) }
-    // return acc
   }, {})
 }
 
