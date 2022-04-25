@@ -1,5 +1,5 @@
 {
-  "name": "rm-node-modules",
+  "name": "rem-nms",
   "version": "1.0.2",
   "main": "./src/index.js",
   "license": "MIT",
