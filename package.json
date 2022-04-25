@@ -1,7 +1,7 @@
 {
   "name": "rem-nms",
   "version": "1.0.3",
-  "main": "./src/index.js",
+  "main": "./src/run.js",
   "author": {
     "name": "lgtome",
     "email": "seryikotenok232@gmail.com"
@@ -19,28 +19,38 @@
   "scripts": {
     "dev": "nodemon ./src/index.js",
     "test": "node ./src/bin/exec",
-    "execute": "node ./src/index.js",
-    "check": "node ./src/check.js",
+    "execute": "node ./src/run.js",
     "format": "prettier --write .",
     "prepublish": "npm run format && npm run lint",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test:m": "rm-nm --path=../../ --days=7"
   },
   "type": "module",
   "bin": {
     "rm-nm": "./src/bin/exec.js"
   },
   "files": [
-    "bin"
+    "LICENSE",
+    "README.md",
+    "bin",
+    "conf",
+    "src",
+    "messages"
   ],
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
   "dependencies": {
-    "cross-spawn": "^7.0.3"
+    "cross-spawn": "^7.0.3",
+    "rm-nm": "^0.0.2"
   },
   "repository": {
     "type": "git",
     "url": "git+github.com/lgtome/rm-node-modules-cli.git"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/run.js"
   }
 }
