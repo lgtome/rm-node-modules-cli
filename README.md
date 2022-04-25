@@ -4,9 +4,10 @@ This is the CLI which allows to remove unused by days count node_modules.
 
 ## Table of Contents
 
-1. [Installation and Usage](#installation-and-usage)
-2. [Arguments](#arguments)
-3. [Example Structure](#structure)
+- [Installation And Usage](#installation-and-usage)
+- [Arguments](#arguments)
+- [Example Structure](#example-structure)
+- [Example Commands](#example-commands)
 
 ## <a name="installation-and-usage"></a>Installation and Usage
 
@@ -58,7 +59,7 @@ _**days**_ - how many days passed after the last editing. Any number value, if t
 
 ## <a name="structure"></a>Example Structure
 
-```
+```sh
 projects <-- path to this folder
 │
 └───sample_proj_1
@@ -71,4 +72,25 @@ projects <-- path to this folder
 │   │   node_modules <-- will be deleted
 │   │   ...
 
+```
+
+## <a name="commands"></a>Example Commands
+
+Default usage:
+
+```sh
+rm-nm check --path=../../ --days=7
+rm-nm execute --path=../../ --days=7
+```
+
+also you can use like this to check:
+
+```sh
+rm-nm --path=../../ --days=7
+```
+
+days = 0, says that the last changed irrelevant:
+
+```sh
+rm-nm --path=../../ --days=0 <-- will be deleted all node_modules which will be found
 ```
