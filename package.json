@@ -2,6 +2,10 @@
   "name": "rem-nms",
   "version": "1.0.2",
   "main": "./src/index.js",
+  "author": {
+    "name": "lgtome",
+    "email": "seryikotenok232@gmail.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.14.0",
@@ -34,5 +38,9 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+github.com/lgtome/rm-node-modules-cli.git"
   }
 }
