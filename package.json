@@ -1,6 +1,6 @@
 {
   "name": "rm-nmless",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "main": "./src/run.js",
   "author": {
     "name": "lgtome",
@@ -43,9 +43,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+github.com/lgtome/rm-node-modules-cli.git"
+    "url": "github.com/lgtome/rm-node-modules-cli.git"
   },
+  "homepage": "github.com/lgtome/rm-node-modules-cli#readme",
   "exports": {
     ".": "./"
-  }
+  },
+  "keywords": [
+    "node_modules",
+    "node_module",
+    "remove",
+    "useless",
+    "modules",
+    "remove node",
+    "cli",
+    "CLI"
+  ]
 }
