@@ -1,6 +1,6 @@
 {
   "name": "rm-nmless",
-  "version": "1.1.4",
+  "version": "1.1.9",
   "main": "./src/run.js",
   "author": {
     "name": "lgtome",
@@ -8,17 +8,20 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "ava": "^4.2.0",
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "mock-fs": "^5.1.2",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2"
   },
   "scripts": {
     "dev": "nodemon ./src/index.js",
     "test": "node ./src/bin/exec",
+    "tests": "ava",
     "execute": "node ./src/run.js",
     "format": "prettier --write .",
     "prepublish": "npm run format && npm run lint",
@@ -34,9 +37,7 @@
     "LICENSE",
     "README.md",
     "bin",
-    "conf",
-    "src",
-    "messages"
+    "src"
   ],
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
@@ -58,5 +59,6 @@
     "remove node",
     "cli",
     "CLI"
-  ]
+  ],
+  "dependencies": {}
 }
