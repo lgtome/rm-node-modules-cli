@@ -12,11 +12,11 @@ import { printToConsole, findModulesAndProjectTime } from '../utils/index.js'
 const { promises } = fs
 
 export async function run(entryPath, day = 14, type = 'check') {
-  if (!entryPath || !typeof day === 'number' || !type)
-    return Error('Arguments not provided!')
-  let obs = false
+  if (!entryPath || typeof day !== 'number' || !type)
+    return new Error('Arguments not provided!')
   const projects = await promises.readdir(entryPath)
   const isProjectDir = projects.filter((proj) => checkIsProject(proj)).length
+
   projects.forEach(async (proj) => {
     const currentPath = path.join(entryPath, proj)
     const isDir = fs.lstatSync(currentPath).isDirectory()
@@ -35,6 +35,7 @@ export async function run(entryPath, day = 14, type = 'check') {
       isModulesFounded,
       entryPath,
     )
+
     if (isModulesFounded && isDeleteNeeded) {
       emitter.subscribe(true)
       printToConsole(`Folder to delete 🍢 - ${pathToModules}`, true)

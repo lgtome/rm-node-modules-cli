@@ -1,6 +1,6 @@
 ## Remove node_modules
 
-This is the CLI which allows to remove unused by days count node_modules.
+This is the CLI that allows removing unused by days count node_modules.
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@ This is the CLI which allows to remove unused by days count node_modules.
 - [Arguments](#arguments)
 - [Example Structure](#example-structure)
 - [Example Commands](#example-commands)
+- [Future Goals](#goals)
 - [Contribution](#contribution)
 
 ## <a name="installation-and-usage"></a>Installation and Usage
@@ -84,6 +85,12 @@ rm-nm check --path=../../ --days=7
 rm-nm execute --path=../../ --days=7
 ```
 
+path also can be like this:
+
+```sh
+rm-nm check --path=.
+```
+
 also you can use like this to check:
 
 ```sh
@@ -102,6 +109,11 @@ days = 0, says that the last changed irrelevant:
 ```sh
 rm-nm --path=../../ --days=0 <-- will be deleted all node_modules which will be found
 ```
+
+## <a name="goals"></a>Future Goals
+
+- Providing absolute path like `~`.
+- Providing more information about projects.
 
 ## <a name="contribution"></a>Contribution
 
