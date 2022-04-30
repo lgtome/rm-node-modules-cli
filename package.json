@@ -26,8 +26,8 @@
   },
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "test": "node ./src/bin/exec",
-    "tests": "ava",
+    "serve": "node ./src/bin/exec",
+    "test": "ava",
     "coverage": "c8 -c ./c8.json ava",
     "execute": "node ./src/run.js",
     "format": "prettier --write .",

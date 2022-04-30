@@ -1,6 +1,7 @@
 ## Remove node_modules
 
 This is the CLI that allows removing unused by days count node_modules.
+Zero dependencies.✨
 
 ## Table of Contents
 
