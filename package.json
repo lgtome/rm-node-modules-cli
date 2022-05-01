@@ -25,7 +25,6 @@
     "prettier": "^2.6.2"
   },
   "scripts": {
-    "dev": "nodemon ./src/index.js",
     "serve": "node ./src/bin/exec",
     "test": "ava",
     "coverage": "c8 -c ./c8.json ava",
