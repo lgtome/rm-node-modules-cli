@@ -58,7 +58,7 @@ test('Execute should not affect if marked files do not exist', async (t) => {
   const read = fs.readdirSync(folder)
   t.is(read.length, 1)
 })
-test('Execute should delete if node_modules exist and days are correct', async (t) => {
+test.skip('Execute should delete if node_modules exist and days are correct', async (t) => {
   const folder = `${process.cwd()}/directory/node_modules`
   try {
     const entryPath = path.resolve(process.cwd(), 'directory')
