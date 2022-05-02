@@ -1,5 +1,5 @@
 <a href="https://codeclimate.com/github/lgtome/rm-node-modules-cli/test_coverage"><img src="https://api.codeclimate.com/v1/badges/40681dc8a9e1492cb3e9/test_coverage" /></a>
-[![npm](https://img.shields.io/github/package-json/v/lgtome/rm-node-modules-cli)](https://www.npmjs.com/package/rm-nmless)
+[![npm](https://img.shields.io/npm/v/rm-nmless.svg)](https://www.npmjs.com/package/rm-nmless)
 <img src="https://img.shields.io/github/repo-size/lgtome/rm-node-modules-cli" />
 <img src="https://img.shields.io/github/license/lgtome/rm-node-modules-cli" />
 <img src="https://img.shields.io/github/last-commit/lgtome/rm-node-modules-cli" />
