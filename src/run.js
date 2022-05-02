@@ -10,6 +10,7 @@ import {
 export function exec(args) {
   const { entryPath, days, type } = args
   const resolvedPath = getResolvedPath(entryPath)
+  console.log(resolvedPath)
   const { resolvedType, error } = getResolvedType(type)
   if (error) {
     console.log(error.message)
