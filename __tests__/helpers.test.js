@@ -1,12 +1,12 @@
 import test from 'ava'
 import sinon from 'sinon'
-import { run } from '../src/service/index.js'
 import {
   compareDays,
   getResolvedPath,
   getResolvedType,
   transformHomePath,
   getMessageByType,
+  isVerbose,
 } from '../src/helpers/index.js'
 import { emitter } from '../src/service/eventEmitter.js'
 
@@ -44,14 +44,17 @@ test('Get resolved type should return error if type provided incorrectly', (t) =
 
   t.truthy(type.error)
 })
-test('Event emitter should return list of subscribers correctly', (t) => {
+test('Event emitter should return list of subscribers with projects', (t) => {
   const spy = sinon.spy()
-  emitter.subscribe(spy)
-  emitter.subscribe(spy)
-  emitter.subscribe(spy)
-  const list = emitter.getList()
+  emitter.subscribe('projects', spy)
+  emitter.subscribe('projects', spy)
+  emitter.subscribe('projects', spy)
+  emitter.subscribe('projects', spy)
+  const list = emitter.getListOfProjects()
+  const errorsList = emitter.getListOfErrors()
 
-  t.is(list.length, 3)
+  t.is(list.length, 4)
+  t.falsy(errorsList)
 })
 test('Home path should return correctly', (t) => {
   const home = process.env.HOME
@@ -72,4 +75,19 @@ test('Message by type should return correctly if passed check execute', (t) => {
   const message = 'Thanks for usage.'
   const messageByType = getMessageByType('execute')
   t.truthy(messageByType.includes(message))
+})
+test('Verbose function must return true if v or verbose flag passed', (t) => {
+  const argsV = { v: 'v' }
+  const argsVerbose = { verbose: 'verbose' }
+  const v = isVerbose(argsV)
+  const verbose = isVerbose(argsVerbose)
+
+  t.truthy(v)
+  t.truthy(verbose)
+})
+test('Verbose function must return false if v or verbose flag not passed', (t) => {
+  const args = { someArg: 'someArgument' }
+  const verbose = isVerbose(args)
+
+  t.falsy(verbose)
 })

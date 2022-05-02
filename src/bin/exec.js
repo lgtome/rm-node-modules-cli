@@ -18,8 +18,11 @@ function getArgs(arr) {
 function constructFromArgs(path, separator = '=', prefix = '--') {
   const prefixLength = prefix.length
   const separatorIndex = path.indexOf('=')
-  if (!~separatorIndex) return { type: path }
+  if (!~separatorIndex && !path.includes(prefix)) return { type: path }
   const resultPath = path.slice(prefixLength).split(separator)
+  if (resultPath.length === 1) {
+    resultPath.push(true)
+  }
   const resultObject = Object.fromEntries([resultPath])
   if (resultObject.path) {
     return { entryPath: resultObject.path }

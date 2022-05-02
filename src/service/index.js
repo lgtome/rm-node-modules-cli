@@ -42,7 +42,8 @@ export async function run(entryPath, day = 14, type = 'check') {
       )
 
       if (isModulesFounded && isDeleteNeeded) {
-        emitter.subscribe(true)
+        emitter.subscribe('projects', entryPath)
+        emitter.subscribe('info', { path: pathToModules, listOfDays: days })
         printToConsole(`Folder to delete 🍢 - ${pathToModules}`, true)
       }
       if (type !== 'check' && pathToModules) {
@@ -51,7 +52,9 @@ export async function run(entryPath, day = 14, type = 'check') {
       }
     }
   } catch (e) {
-    console.log('')
+    console.log('works', e)
+    const error = e?.message ? e.message : e
+    emitter.subscribe('errors', error)
   }
   return false
 }

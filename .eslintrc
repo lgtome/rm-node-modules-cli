@@ -1,6 +1,10 @@
 {
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
+  ],
+  "plugins": ["prettier", "import"],
   "settings": {
     "import/resolver": {
       "node": {

@@ -5,12 +5,12 @@ import {
   getResolvedType,
   getMessageByType,
   getResolvedPath,
+  isVerbose,
 } from './helpers/index.js'
 
 export function exec(args) {
   const { entryPath, days, type } = args
   const resolvedPath = getResolvedPath(entryPath)
-
   const { resolvedType, error } = getResolvedType(type)
   if (error) {
     console.log(error.message)
@@ -20,7 +20,10 @@ export function exec(args) {
     .then(() => printToConsole(getMessageByType(resolvedType), true))
     .catch((e) => printToConsole(`Something went wrong 😌 -> ${e}`, true))
   process.on('exit', () => {
-    if (emitter.getList().length <= 0) {
+    if (isVerbose(args)) {
+      printToConsole(emitter.getInformationOfProjects(), true)
+    }
+    if (!emitter.getListOfProjects()) {
       console.log('Nothing to delete 🙄')
     }
   })
