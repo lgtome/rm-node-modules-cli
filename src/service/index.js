@@ -50,6 +50,8 @@ export async function run(entryPath, day = 14, type = 'check') {
         printToConsole(resultToPrint)
       }
     }
-  } catch {}
+  } catch (e) {
+    console.log('')
+  }
   return false
 }

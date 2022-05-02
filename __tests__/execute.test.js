@@ -2,7 +2,7 @@ import mock from 'mock-fs'
 import fs from 'fs'
 import path from 'path'
 import test from 'ava'
-import { _Timeout } from './helpers/index.js'
+import { Timeout } from './helpers/index.js'
 import { mockData } from './helpers/mock.js'
 import { run } from '../src/service/index.js'
 
@@ -41,7 +41,9 @@ test('Execute should not affect if days not agreed', async (t) => {
   try {
     const entryPath = path.resolve(process.cwd(), 'directory')
     await run(entryPath, 14, 'execute')
-  } catch (e) {}
+  } catch (e) {
+    console.log('')
+  }
   const read = fs.readdirSync(folder)
   t.is(read.length, 1)
 })
@@ -50,7 +52,9 @@ test('Execute should not affect if marked files do not exist', async (t) => {
   try {
     const entryPath = path.resolve(process.cwd(), 'emptyDirectory')
     await run(entryPath, 0, 'execute')
-  } catch (e) {}
+  } catch (e) {
+    console.log('')
+  }
   const read = fs.readdirSync(folder)
   t.is(read.length, 1)
 })
@@ -59,7 +63,7 @@ test('Execute should delete if node_modules exist and days are correct', async (
   try {
     const entryPath = path.resolve(process.cwd(), 'directory')
     await run(entryPath, 0, 'execute')
-    await _Timeout()
+    await Timeout()
     fs.readdirSync(folder)
   } catch (e) {
     t.pass()

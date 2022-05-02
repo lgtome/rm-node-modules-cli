@@ -1,5 +1,5 @@
 function EventEmitter() {
-  let list = []
+  const list = []
 
   return {
     subscribe: (value) => list.push(value),

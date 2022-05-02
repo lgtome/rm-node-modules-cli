@@ -2,7 +2,7 @@ import mock from 'mock-fs'
 import fs from 'fs'
 import path from 'path'
 import test from 'ava'
-import { _Timeout } from './helpers/index.js'
+import { Timeout } from './helpers/index.js'
 import { mockData } from './helpers/mock.js'
 import { run } from '../src/service/index.js'
 
@@ -35,10 +35,12 @@ test('Check method parse folders and not delete them if they correct', async (t)
   try {
     const entryPath = path.resolve(process.cwd(), 'directory')
     await run(entryPath, 0)
-  } catch (e) {}
+  } catch (e) {
+    console.log('')
+  }
   const parsed = fs.readdirSync(folder, 'utf8')
 
-  return _Timeout(2000).then(() => {
+  return Timeout(2000).then(() => {
     t.deepEqual(parsed, selector)
     t.is(parsed.length, selector.length)
   })

@@ -1,4 +1,5 @@
 import test from 'ava'
+import sinon from 'sinon'
 import { run } from '../src/service/index.js'
 import {
   compareDays,
@@ -8,7 +9,6 @@ import {
   getMessageByType,
 } from '../src/helpers/index.js'
 import { emitter } from '../src/service/eventEmitter.js'
-import sinon from 'sinon'
 
 test('Compare days should return false if a days incompatible', (t) => {
   const res = compareDays(null, 1)

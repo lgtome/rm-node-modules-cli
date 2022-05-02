@@ -18,9 +18,7 @@ export function exec(args) {
   }
   run(resolvedPath, days, resolvedType)
     .then(() => printToConsole(getMessageByType(resolvedType), true))
-    .catch((error) =>
-      printToConsole(`Something went wrong 😌 -> ${error}`, true),
-    )
+    .catch((e) => printToConsole(`Something went wrong 😌 -> ${e}`, true))
   process.on('exit', () => {
     if (emitter.getList().length <= 0) {
       console.log('Nothing to delete 🙄')
