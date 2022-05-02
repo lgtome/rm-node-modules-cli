@@ -22,6 +22,7 @@
     "mocha": "^9.2.2",
     "mock-fs": "^5.1.2",
     "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
     "prettier": "^2.6.2",
     "sinon": "^13.0.2"
   },
@@ -29,6 +30,7 @@
     "serve": "node ./src/bin/exec",
     "test": "ava",
     "coverage": "c8 -c ./c8.json ava",
+    "test:coverage": "./node_modules/.bin/nyc --reporter lcov ava -require babel-core/register \"__tests__/**/*.js\" \"!__tests__/helpers/*.js\"",
     "execute": "node ./src/run.js",
     "format": "prettier --write .",
     "prepublish": "npm run format && npm run lint",

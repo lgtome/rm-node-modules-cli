@@ -10,17 +10,17 @@ import {
 import { emitter } from '../src/service/eventEmitter.js'
 import sinon from 'sinon'
 
-const errorMessage = 'Arguments not provided!'
-
 test('Compare days should return false if a days incompatible', (t) => {
   const res = compareDays(null, 1)
   t.false(res)
 })
 
 test('Get resolved path should not return a path if entry path not provided', async (t) => {
+  const mock = sinon.stub(process, 'exit')
   const res = getResolvedPath(null)
 
   t.falsy(res)
+  t.true(mock.calledOnce)
 })
 test('Get resolved path should return a path if entry path provided', (t) => {
   const res = getResolvedPath('.')
@@ -53,7 +53,6 @@ test('Event emitter should return list of subscribers correctly', (t) => {
 
   t.is(list.length, 3)
 })
-
 test('Home path should return correctly', (t) => {
   const home = process.env.HOME
   const transformedPath = transformHomePath('~')

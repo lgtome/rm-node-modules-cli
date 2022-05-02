@@ -1,3 +1,6 @@
+<img src='https://img.shields.io/snyk/vulnerabilities/github/lgtome/rm-node-modules-cli?style=for-the-badge'/>
+
+<br/>
 ## Remove node_modules
 
 This is the CLI that allows removing unused by days count node_modules.
@@ -19,7 +22,7 @@ Prerequisites: [Node.js](https://nodejs.org/) (`^12.22.0`, `^14.17.0`, or `>=16.
 You can install using npm:
 
 ```sh
-npm i -g rem-nms
+npm i -g rm-nmless
 ```
 
 After that, you can execute by the command line using:
@@ -48,7 +51,7 @@ rm-nm execute
 
 Allowed arguments:
 
-_**path**_ - path to folder with projects. See [Structure](#structure) for more information.
+_**path**_ - path to folder with projects. See [Structure](#structure) and [Examples](#example-commands) for more information.
 
 ```sh
 --path=$VALUE$
@@ -86,26 +89,38 @@ rm-nm check --path=../../ --days=7
 rm-nm execute --path=../../ --days=7
 ```
 
-path also can be like this:
+- **path** also can be like this:
 
 ```sh
 rm-nm check --path=.
 ```
 
-also you can use like this to check:
+or this:
+
+```sh
+rm-nm check --path=~ <-- parse user directory
+```
+
+or event this:
+
+```sh
+rm-nm check --path=/ <-- parse root directory
+```
+
+- also you can use like this to check:
 
 ```sh
 rm-nm --path=../../ --days=7
 ```
 
-you can also use without days(default 14d), like this:
+- you can also use without days(default 14d), like this:
 
 ```sh
 rm-nm check --path=../../
 rm-nm execute --path=../../
 ```
 
-days = 0, says that the last changed irrelevant:
+- days = 0, says that the last changed irrelevant:
 
 ```sh
 rm-nm --path=../../ --days=0 <-- will be deleted all node_modules which will be found
@@ -113,8 +128,8 @@ rm-nm --path=../../ --days=0 <-- will be deleted all node_modules which will be 
 
 ## <a name="goals"></a>Future Goals
 
-- Providing absolute path like `~`.
 - Providing more information about projects.
+- Path must be not required.
 
 ## <a name="contribution"></a>Contribution
 
