@@ -68,6 +68,18 @@ _**days**_ - how many days passed after the last editing. Any number value, if t
 --days=$VALUE$
 ```
 
+_**verbose**_ - where parse ended, print additional information about a files
+
+```sh
+--v
+```
+
+or
+
+```sh
+--verbose
+```
+
 ## <a name="structure"></a>Example Structure
 
 ```sh
