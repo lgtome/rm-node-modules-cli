@@ -6,7 +6,7 @@
 
 <br/>
 
-## Remove node_modules, [NPM](https://www.npmjs.com/package/rm-nmless)
+## Remove node_modules cli
 
 This is the CLI that allows removing unused by days count node_modules.
 Zero dependencies, ~100% test coverage. ✨
