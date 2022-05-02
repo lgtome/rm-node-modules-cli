@@ -4,6 +4,9 @@
     "plugin:prettier/recommended",
     "plugin:import/recommended"
   ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "plugins": ["prettier", "import"],
   "settings": {
     "import/resolver": {
@@ -27,6 +30,7 @@
     "consistent-return": "warn",
     "no-use-before-define": "warn",
     "no-bitwise": "off",
-    "import/no-unresolved": "warn"
+    "import/no-unresolved": "warn",
+    "spaced-comment": "warn"
   }
 }

@@ -52,8 +52,7 @@ export async function run(entryPath, day = 14, type = 'check') {
       }
     }
   } catch (e) {
-    console.log('works', e)
-    const error = e?.message ? e.message : e
+    const error = e.message ? e.message : e
     emitter.subscribe('errors', error)
   }
   return false
