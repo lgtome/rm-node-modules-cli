@@ -6,6 +6,7 @@
     "name": "lgtome",
     "email": "seryikotenok232@gmail.com"
   },
+  "description": "CLI for deleting node_modules from an old projects",
   "license": "MIT",
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^4.0.0",
@@ -69,5 +70,7 @@
     "cli",
     "CLI"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "quokka-treasure-chest": "^1.0.2"
+  }
 }
