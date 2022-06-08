@@ -1,6 +1,6 @@
 {
   "name": "rm-nmless",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "main": "./src/run.js",
   "author": {
     "name": "lgtome",
@@ -37,7 +37,8 @@
     "prepublish": "npm run format && npm run lint",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test:m": "rm-nm --path=../../ --days=7"
+    "test:m": "rm-nm --path=../../ --days=7",
+    "version:output": "export v=$npm_package_version"
   },
   "type": "module",
   "bin": {
