@@ -103,6 +103,12 @@ rm-nm check --path=../../ --days=7
 rm-nm execute --path=../../ --days=7
 ```
 
+or without path:
+
+```sh
+rm-nm check <- would be used current  folder
+```
+
 - **path** also can be like this:
 
 ```sh
@@ -143,7 +149,6 @@ rm-nm --path=../../ --days=0 <-- will be deleted all node_modules which will be 
 ## <a name="goals"></a>Future Goals
 
 - Providing more information about projects.
-- Path must be not required.
 
 ## <a name="contribution"></a>Contribution
 

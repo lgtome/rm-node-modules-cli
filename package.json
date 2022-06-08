@@ -32,7 +32,7 @@
     "test": "ava",
     "coverage": "c8 -c ./c8.json ava",
     "test:coverage": "./node_modules/.bin/nyc --reporter lcov ava -require babel-core/register \"__tests__/**/*.js\" \"!__tests__/helpers/*.js\"",
-    "execute": "node ./src/run.js",
+    "execute": "node ./src/bin/exec.js",
     "format": "prettier --write .",
     "prepublish": "npm run format && npm run lint",
     "lint": "eslint .",
@@ -71,7 +71,5 @@
     "cli",
     "CLI"
   ],
-  "dependencies": {
-    "quokka-treasure-chest": "^1.0.2"
-  }
+  "dependencies": {}
 }
