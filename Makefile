@@ -1,2 +1,4 @@
 publish:
-	- git add . && git commit -m "patched: $(npm run version:output)"
+	npm run patch
+	npm version patch
+	npm publish

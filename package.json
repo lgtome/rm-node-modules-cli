@@ -38,7 +38,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test:m": "rm-nm --path=../../ --days=7",
-    "version:output": "echo $npm_package_version"
+    "patch": "git add . && git commit -m \" patched: $npm_package_version \""
   },
   "type": "module",
   "bin": {
