@@ -16,11 +16,9 @@ test('Compare days should return false if a days incompatible', (t) => {
 })
 
 test('Get resolved path should not return a path if entry path not provided', async (t) => {
-  const mock = sinon.stub(process, 'exit')
   const res = getResolvedPath(null)
 
-  t.falsy(res)
-  t.true(mock.calledOnce)
+  t.deepEqual(res, process.cwd())
 })
 test('Get resolved path should return a path if entry path provided', (t) => {
   const res = getResolvedPath('.')
