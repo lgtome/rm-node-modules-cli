@@ -48,13 +48,17 @@ jobs:
     steps:
       - name: checkout root
         uses: actions/checkout@master
-      - name: use nodejs
-        uses: actions/setup-node@master
+        # - name: use nodejs
+        #   uses: actions/setup-node@master
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - name: install dev deps
-        run: npm install
+      - name: credentials
+        run: |
+          git config user.name "${{ secrets.GH_USERNAME }}"
+          git config user.email "${{ secrets.GH_EMAIL }}"
+      - name: install dev dependencies
+        run: npm install --ignore-scripts
       - name: publish application
         run: make publish-ci
     env:
