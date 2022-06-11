@@ -12,8 +12,9 @@ import { printToConsole, findModulesAndProjectTime } from '../utils/index.js'
 const { promises } = fs
 
 export async function run(entryPath, day = 14, type = 'check') {
-  if (!entryPath || typeof day !== 'number' || !type)
+  if (!entryPath || typeof day !== 'number' || !type) {
     return new Error('Arguments not provided!')
+  }
   try {
     const projects = await promises.readdir(entryPath)
     const isProjectDir = projects.filter((proj) => checkIsProject(proj)).length

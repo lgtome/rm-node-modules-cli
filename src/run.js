@@ -16,7 +16,7 @@ export function exec(args) {
     console.log(error.message)
     return process.exit(0)
   }
-  run(resolvedPath, days, resolvedType)
+  run(resolvedPath, +days, resolvedType)
     .then(() => printToConsole(getMessageByType(resolvedType), true))
     .catch((e) => printToConsole(`Something went wrong 😌 -> ${e}`, true))
   process.on('exit', () => {
