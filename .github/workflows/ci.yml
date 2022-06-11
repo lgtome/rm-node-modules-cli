@@ -41,7 +41,7 @@ jobs:
           coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
           debug: true
   publish:
-    if: GITHUB_REF_NAME == 'master'
+    if: ${{ github.ref_name == 'master' }}
     needs: [coverage]
     name: publish
     runs-on: ubuntu-latest
