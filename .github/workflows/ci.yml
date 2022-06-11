@@ -61,5 +61,7 @@ jobs:
         run: npm install --ignore-scripts
       - name: publish application
         run: make publish
+      - name: push to master
+        run: git push
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
