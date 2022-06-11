@@ -1,6 +1,6 @@
 {
   "name": "rm-nmless",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "main": "./src/run.js",
   "author": {
     "name": "lgtome",
