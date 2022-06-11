@@ -1,15 +1,8 @@
-name: build
+name: main
 on:
   push:
     branches:
       - master
-    tags:
-      - '!*'
-    paths:
-      - src/*
-      - __tests__/*
-      - '*.json'
-      - yarn.lock
   pull_request:
     branches:
       - master
