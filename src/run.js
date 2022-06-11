@@ -6,6 +6,7 @@ import {
   getMessageByType,
   getResolvedPath,
   isVerbose,
+  getNumFromString,
 } from './helpers/index.js'
 
 export function exec(args) {
@@ -20,11 +21,20 @@ export function exec(args) {
     .then(() => printToConsole(getMessageByType(resolvedType), true))
     .catch((e) => printToConsole(`Something went wrong 😌 -> ${e}`, true))
   process.on('exit', () => {
-    if (isVerbose(args)) {
-      printToConsole(emitter.getInformationOfProjects(), true)
-    }
     if (!emitter.getListOfProjects()) {
-      console.log('Nothing to delete 🙄')
+      return console.log('Nothing to delete 🙄')
     }
+    if (isVerbose(args)) {
+      const projectsInfos = emitter.getInformationOfProjects()
+      projectsInfos.forEach((projectInfo) =>
+        printToConsole(`\n ${JSON.stringify(projectInfo, null, 2)} \n`, true),
+      )
+    }
+    const projectsInfos = emitter.getInformationOfProjects()
+    const sizeToDelete = projectsInfos.reduce(
+      (acc, { size }) => acc + getNumFromString(size),
+      0,
+    )
+    printToConsole(`\n Will be deleted: ${sizeToDelete} mb \n`, true)
   })
 }
