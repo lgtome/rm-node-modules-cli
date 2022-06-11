@@ -47,3 +47,13 @@ jobs:
           coverageCommand: yarn run coverage
           coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
           debug: true
+  publish:
+    if: ${{ GITHUB_REF_NAME }} == 'master'
+    needs: [coverage]
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout root
+        uses: actions/checkout@master
+      - name: publish application
+        run: make publish
