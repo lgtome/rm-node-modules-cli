@@ -48,8 +48,8 @@ jobs:
     steps:
       - name: checkout root
         uses: actions/checkout@master
-        # - name: use nodejs
-        #   uses: actions/setup-node@master
+      - name: use nodejs
+        uses: actions/setup-node@master
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
