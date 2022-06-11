@@ -15,6 +15,7 @@ export async function run(entryPath, day = 14, type = 'check') {
   if (!entryPath || typeof day !== 'number' || !type) {
     return new Error('Arguments not provided!')
   }
+  console.log(day)
   try {
     const projects = await promises.readdir(entryPath)
     const isProjectDir = projects.filter((proj) => checkIsProject(proj)).length
@@ -41,7 +42,6 @@ export async function run(entryPath, day = 14, type = 'check') {
         isModulesFounded,
         entryPath,
       )
-
       if (isModulesFounded && isDeleteNeeded) {
         emitter.subscribe('projects', entryPath)
         emitter.subscribe('info', { path: pathToModules, listOfDays: days })

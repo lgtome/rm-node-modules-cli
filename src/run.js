@@ -9,7 +9,7 @@ import {
 } from './helpers/index.js'
 
 export function exec(args) {
-  const { entryPath, days, type } = args
+  const { entryPath, days = 14, type } = args
   const resolvedPath = getResolvedPath(entryPath)
   const { resolvedType, error } = getResolvedType(type)
   if (error) {
