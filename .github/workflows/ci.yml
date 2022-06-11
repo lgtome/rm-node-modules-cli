@@ -53,6 +53,8 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
+      - name: install dev deps
+        run: npm install
       - name: publish application
         run: make publish-ci
     env:
