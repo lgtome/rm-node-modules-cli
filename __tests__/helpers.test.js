@@ -101,6 +101,12 @@ test('bytesToMb should return transformed to mb value', (t) => {
   t.is(mbDecimal2, '0.21 mb')
   t.is(mbDecimal4, '0.2148 mb')
 })
+test('bytesToMb should return correct value if bytes is 0', (t) => {
+  const size = 0
+  const result = bytesToMb(size)
+
+  t.is(result, '0 Bytes')
+})
 test('getNumFromString should return transformed to number', (t) => {
   const size = '214781.1 value'
   const num = getNumFromString(size)
