@@ -34,7 +34,7 @@
     "test:coverage": "./node_modules/.bin/nyc --reporter lcov ava -require babel-core/register \"__tests__/**/*.js\" \"!__tests__/helpers/*.js\"",
     "execute": "node ./src/bin/exec.js",
     "format": "prettier --write .",
-    "prepublish": "npm run format && npm run lint",
+    "prepublishOnly": "npm run format && npm run lint",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test:m": "rm-nm --path=../../ --days=7",
