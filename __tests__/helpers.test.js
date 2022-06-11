@@ -7,6 +7,10 @@ import {
   transformHomePath,
   getMessageByType,
   isVerbose,
+  bytesToMb,
+  getNumFromString,
+  getFilesStat,
+  getDirSize,
 } from '../src/helpers/index.js'
 import { emitter } from '../src/service/eventEmitter.js'
 
@@ -63,7 +67,7 @@ test('Home path should return correctly', (t) => {
 
 test('Message by type should return correctly if passed check method, or not passed at all', (t) => {
   const message =
-    'Thanks for usage, you can use `run` command for deleting files'
+    'Thanks for usage, you can use `execute` command for deleting files'
   const messageByTypeCheck = getMessageByType('check')
   const messageByTypeDefault = getMessageByType('')
   t.truthy(messageByTypeCheck.includes(message))
@@ -88,4 +92,19 @@ test('Verbose function must return false if v or verbose flag not passed', (t) =
   const verbose = isVerbose(args)
 
   t.falsy(verbose)
+})
+test('bytesToMb should return transformed to mb value', (t) => {
+  const size = 214781
+  const mbDecimal2 = bytesToMb(size, 2)
+  const mbDecimal4 = bytesToMb(size, 4)
+
+  t.is(mbDecimal2, '0.21 mb')
+  t.is(mbDecimal4, '0.2148 mb')
+})
+test('getNumFromString should return transformed to number', (t) => {
+  const size = '214781.1 value'
+  const num = getNumFromString(size)
+
+  t.is(typeof num, 'number')
+  t.is(num, 214781.1)
 })
