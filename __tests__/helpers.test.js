@@ -1,4 +1,5 @@
 import test from 'ava'
+import mock from 'mock-fs'
 import sinon from 'sinon'
 import {
   compareDays,
@@ -13,6 +14,22 @@ import {
   getDirSize,
 } from '../src/helpers/index.js'
 import { emitter } from '../src/service/eventEmitter.js'
+import { Timeout } from './helpers/index.js'
+
+test.beforeEach(
+  'parse',
+  () => {
+    mock({
+      directory: {
+        'sample.js': Buffer.from([1, 2, 9, 2, 4, 1]),
+      },
+    })
+  },
+  { createCwd: false },
+)
+test.after('parse', () => {
+  mock.restore()
+})
 
 test('Compare days should return false if a days incompatible', (t) => {
   const res = compareDays(null, 1)
@@ -113,4 +130,24 @@ test('getNumFromString should return transformed to number', (t) => {
 
   t.is(typeof num, 'number')
   t.is(num, 214781.1)
+})
+test('getFilesStat should return directory size', async (t) => {
+  const dirPath = `${process.cwd()}/directory`
+  try {
+    const stat = await getFilesStat(dirPath)
+    await Timeout(250)
+    t.is(Object.keys(...stat).includes('size'), true)
+  } catch (e) {
+    t.fail('Caught error')
+  }
+})
+test('getDirSize should return directory size', async (t) => {
+  const dirPath = `${process.cwd()}/directory`
+  try {
+    const num = await getDirSize(dirPath)
+    await Timeout(250)
+    t.is(num.includes('mb'), true)
+  } catch (e) {
+    t.fail('Caught error')
+  }
 })

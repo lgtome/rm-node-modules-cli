@@ -11,5 +11,4 @@ module.exports = (wallaby) => ({
   },
   debug: true,
   testFramework: 'ava',
-  runMode: 'onsave',
 })
