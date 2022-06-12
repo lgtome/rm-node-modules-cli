@@ -69,7 +69,10 @@
     "modules",
     "remove node",
     "cli",
-    "CLI"
+    "CLI",
+    "size",
+    "space",
+    "cleanup"
   ],
   "dependencies": {}
 }
